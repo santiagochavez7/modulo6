@@ -1,0 +1,33 @@
+{% extends "automovil/plantilla_base.html" %}
+
+{% block title %}Listado de Automóviles{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Listado de automóviles</h2>
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Serial Carrocería</th>
+            <th>Serial Motor</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Condición de Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for automovil in automoviles %}
+        <tr>
+            <td>{{ automovil.marca }}</td>
+            <td>{{ automovil.modelo }}</td>
+            <td>{{ automovil.serial_carroceria }}</td>
+            <td>{{ automovil.serial_motor }}</td>
+            <td>{{ automovil.categoria }}</td>
+            <td>{{ automovil.precio }}</td>
+            <td>{{ automovil.condicion_precio }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

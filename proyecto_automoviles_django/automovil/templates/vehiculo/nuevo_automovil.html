@@ -1,0 +1,12 @@
+{% extends "automovil/plantilla_base.html" %}
+
+{% block title %}Agregar Automóvil{% endblock %}
+
+{% block content %}
+<h2>Agregar un nuevo automóvil</h2>
+<form method="post" action="{% url 'nuevo_automovil' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}
